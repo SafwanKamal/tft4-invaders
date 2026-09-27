@@ -1,0 +1,29 @@
+/* emu_rt.c.txt - what the TI run-time library gives the game, for the clang
+ * emulator build (not .c, so CCS doesn't compile it). */
+#include <stddef.h>
+#include <stdint.h>
+void *memset(void *d, int c, size_t n) { uint8_t *p = d; while (n--) *p++ = (uint8_t)c; return d; }
+void *memcpy(void *d, const void *s, size_t n) { uint8_t *p = d; const uint8_t *q = s; while (n--) *p++ = *q++; return d; }
+unsigned int __mspabi_divu(unsigned int n, unsigned int d)
+{
+    unsigned int q = 0, r = 0; int i;
+    for (i = 0; i < 16; i++) {              /* constant shifts only */
+        r = (r << 1) | (n >> 15); n <<= 1; q <<= 1;
+        if (r >= d) { r -= d; q |= 1; }
+    }
+    return q;
+}
+unsigned int __mspabi_remu(unsigned int n, unsigned int d) { return n - __mspabi_divu(n, d) * d; }
+int __mspabi_divi(int n, int d) { int s = (n < 0) ^ (d < 0); unsigned q = __mspabi_divu(n < 0 ? -n : n, d < 0 ? -d : d); return s ? -(int)q : (int)q; }
+int __mspabi_remi(int n, int d) { return n - __mspabi_divi(n, d) * d; }
+int __mspabi_mpyi(int a, int b) { unsigned r = 0, x = a, y = b; while (y) { if (y & 1) r += x; x <<= 1; y >>= 1; } return (int)r; }
+unsigned long __mspabi_mpyl(unsigned long a, unsigned long b) { unsigned long r = 0; while (b) { if (b & 1) r += a; a <<= 1; b >>= 1; } return r; }
+unsigned long __mspabi_divul(unsigned long n, unsigned long d)
+{
+    unsigned long q = 0, r = 0; int i;
+    for (i = 0; i < 32; i++) {              /* constant shifts only (no helpers) */
+        r = (r << 1) | (n >> 31); n <<= 1; q <<= 1;
+        if (r >= d) { r -= d; q |= 1; }
+    }
+    return q;
+}

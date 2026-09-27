@@ -1,0 +1,134 @@
+# TFT4 Invaders sprites. One character per pixel: '.' = transparent,
+# 1-9, A-F = palette index (tft4 DefaultPalette):
+#   1 navy  2 plum  3 dark green  4 brown  5 dark grey  6 light grey  7 white
+#   8 red  9 orange  A yellow  B green  C sky blue  D lavender  E pink  F peach
+# Regenerate: python3 ../TFT4_Driver/tools/sprite2asm.py sprites.txt -o sprites.c
+
+sprite SquidA
+...EE...
+..EEEE..
+.EEEEEE.
+EE7EE7EE
+..D..D..
+.D.DD.D.
+
+sprite SquidB
+...EE...
+..EEEE..
+.EEEEEE.
+EE7EE7EE
+.D.DD.D.
+D......D
+
+sprite CrabA
+.B....B.
+..BBBB..
+.BB77BB.
+BBBBBBBB
+3.3333.3
+3.3..3.3
+
+sprite CrabB
+.B....B.
+B.BBBB.B
+BBB77BBB
+BBBBBBBB
+..3333..
+.3....3.
+
+sprite OctoA
+..CCCC..
+.CCCCCC.
+CC7CC7CC
+CCCCCCCC
+.DD..DD.
+DD....DD
+
+sprite OctoB
+..CCCC..
+.CCCCCC.
+CC7CC7CC
+CCCCCCCC
+..D..D..
+.D.DD.D.
+
+sprite Player
+....7....
+...C7C...
+.CCCCCCC.
+CCCCCCCCC
+CC6CCC6CC
+666666666
+
+sprite PBoomA
+..A...A..
+A..A.A..A
+..A9A9A..
+.9A999A9.
+99.989.99
+888888888
+
+sprite PBoomB
+A...A...A
+..9...9..
+.9.989.9.
+..98889..
+A.98889.A
+888888888
+
+sprite Ufo
+.....888888.....
+...8888888888...
+..888888888888..
+.88A88A88A88A88.
+8888888888888888
+..999..99..999..
+
+sprite Boom
+.A.AA.A.
+A.....A.
+..A99A..
+99.88.99
+..A99A..
+A.....A.
+.A.AA.A.
+
+sprite PShot
+7
+A
+A
+A
+9
+
+sprite EShotA
+.8.
+8..
+.E.
+..8
+.8.
+
+sprite EShotB
+.8.
+..8
+.E.
+8..
+.8.
+
+sprite Capsule
+.99999.
+99A7A99
+99777A9
+99A7A99
+997A7A9
+99777A9
+.99999.
+
+sprite Spark
+A.A
+.7.
+A.A
+
+sprite MiniShip
+..C..
+.CCC.
+CCCCC

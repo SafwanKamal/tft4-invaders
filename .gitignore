@@ -1,0 +1,21 @@
+# CCS build output and IDE state
+Debug/
+Release/
+.metadata/
+.launches/
+.clangd
+*.obj
+*.out
+*.map
+*.d
+*.lst
+*_linkInfo.xml
+
+# emulator builds (tools/test, bench/*/test)
+obj/
+*.elf
+*.o
+__pycache__/
+*.pyc
+
+.DS_Store
