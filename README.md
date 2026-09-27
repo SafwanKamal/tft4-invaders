@@ -13,6 +13,8 @@ What's new compared with the 1-bit FR6989 Invaders:
 
 The gameplay is the same as FR6989 Invaders.
 
+Tested on the board (TI compiler, 16 MHz): it builds, links and plays.
+
 ## Controls
 
 | Input | Does |
@@ -83,3 +85,7 @@ python3 test/test_game.py /tmp/gb/game.elf ../tft4/tools/test /tmp/out 700
 ```
 
 The test builds the game with clang and the driver with llvm-mc. An autopilot then plays it: it starts the game and sweeps left and right. Every 50 frames the test checks that the glass matches Back. It saves screenshots and prints the frame times.
+
+## License
+
+MIT (`LICENSE`), except the 6x8 font data in `font6x8.asm`. It comes from TI's grlib and keeps TI's BSD 3-clause license; see `THIRD_PARTY_NOTICES.md`.

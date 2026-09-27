@@ -1,4 +1,5 @@
 /*******************************************************************************
+ * SPDX-License-Identifier: MIT (see LICENSE)
  * tft4.h - C interface to the tft4 driver (tft4.asm + tft4_config.inc + font6x8.asm)
  * 16-color, 4 bits per pixel, delta-rendering driver for the ST7735 128x128
  * TFT on the Educational BoosterPack MKII with the MSP-EXP430FR6989.

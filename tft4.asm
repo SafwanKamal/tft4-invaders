@@ -1,6 +1,7 @@
 ;******************************************************************************
 ; Safwan Kamal
 ; SEPTEMBER 2026
+; SPDX-License-Identifier: MIT (see LICENSE)
 ; tft4 - 16-color (4 bpp) delta-rendering driver for the ST7735 128x128 TFT
 ;        on the Educational BoosterPack MKII (MSP-EXP430FR6989 LaunchPad)
 ;******************************************************************************
